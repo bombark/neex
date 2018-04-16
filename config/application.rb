@@ -23,7 +23,7 @@ module Bootstrap
 		def database
 			if @database.nil?
 				@database  = Orientdb4r.client
-				@database.connect :database => "rede", :user => "root", :password => "teste"
+				@database.connect :database => "teste", :user => "root", :password => "teste"
 			end
 			return @database
 		end
