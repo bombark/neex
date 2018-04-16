@@ -1,0 +1,14 @@
+<div class="container">
+	<h1 align="center">Editing Group</h1><hr>
+	<div class="row"><div class="col-3" align="center">
+		<%=image_md(@node)%>
+	</div><div class="col-6">
+		<%= form_for(@node, as: "node", url: "/edges/update?akk=thumbnail", method:"post") do |f| %>
+			<%= f.hidden_field :id %>
+			<%= f.label :file %>
+			<%= f.file_field :bitstream %>
+			<%= f.submit "Upload novo Thumbnail", class: "btn btn-primary" %>
+		<% end %>
+	</div></div><hr>
+	<%= render 'form' %>
+</div>

@@ -1,0 +1,11 @@
+
+<%=title "Noticias",nodepkg.count%>
+
+<% nodepkg.each do |article| %><tr>
+	<%author = article.owner.all[0]%>
+	<div class="blog-post">
+		<h2 class="blog-post-title"><%=link_to article.name,article.path%></h2>
+		<p class="blog-post-meta">Data: <%=article.date%> por <%=link_to author.name,author.path%></p>
+		<p><%=article.brief%></p><hr>
+	</div>
+<% end %>

@@ -1,0 +1,19 @@
+<%meta title: "Neex - #{node.name}"%>
+<%metamagic name: node.name %>
+<%metamagic language: "pt-br" %>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= node.name %></h1><hr>
+
+<p align="justify">
+	<%=node.description.gsub("\\n","<br>")%>
+</p>
+
+
+<div class="row"><div class="col-12">
+	<%author=node.owner.all[0]%>
+	<%=image_sm author%>
+	<%=author.name%>
+</div></div>

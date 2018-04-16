@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%=title "Grupos",count: nodepkg.count, add: "opa"%>
+<div class="row"><% nodepkg.each do |group| %>
+	<div class="col-4"><%=card(group)%></div>
+<%end%></div>
+
+
+
+<%= link_to 'New Group', new_group_path %>

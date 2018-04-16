@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%=title "Projetos",count:nodepkg.count%>
+<table class="table">
+	<thead><tr>
+		<th>Nome</th>
+		<th>Particpantes</th>
+		<th>Seguidores</th>
+		<th colspan="3"></th>
+	</tr></thead>
+	<tbody><% @projects.each do |proj| %><tr>
+		<td><%=image_sm(proj)%><%=link_to proj.name, proj.path %></td>
+		<td><%= proj.members.count + proj.authors.count %></td>
+		<td><%= proj.followers.count %></td>
+	</tr><% end %></tbody>
+</table><br>
+
+<%if node.present?%>
+	<%= link_to 'New Project', "#{node.path}/projects/new" %>
+<%else%>
+	<%= link_to 'New Project', new_project_path %>
+<%end%>

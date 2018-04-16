@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Units</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @units.each do |unit| %>
+      <tr>
+        <td><%= unit.classe %></td>
+        <td><%= unit.code %></td>
+        <td><%= unit.name %></td>
+        <td>
+			<%= link_to 'Edit', edit_unit_path(unit) %>
+
+		</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

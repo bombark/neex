@@ -1,0 +1,72 @@
+<div class="row"><div class="col-12">
+	<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark"><div class="col-md-6 px-0">
+		<h1 class="display-4 font-italic"><%=node.name%></h1>
+		<p class="lead my-3"><%=node.description%></p>
+	</div></div>
+</div></div>
+
+
+<div class="row"><div class="col-8">
+	<p id="notice"><%= notice %></p>
+
+	<ul class="nav">
+		<li class="nav-item">
+			<%=followed_button(node,user)%>
+		</li>
+		<li class="nav-item">
+			<%=button_enter(node,user)%>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="#">Link</a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link disabled" href="#">Disabled</a>
+		</li>
+	</ul>
+
+
+<%=title "Cronograma","0"%>
+
+
+<%=title "Tarefas","0"%>
+
+<%=link_to "Nova Tarefa","/tasks/new"%>
+
+
+
+
+
+
+<div class="card mb-4 box-shadow">
+	<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+	<div class="card-body">
+	<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+	<div class="d-flex justify-content-between align-items-center">
+	<div class="btn-group">
+	<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+	<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+	</div>
+	<small class="text-muted">9 mins</small>
+	</div>
+	</div>
+</div>
+
+
+
+</div><div class="col-4">
+
+	<h2>Participantes</h2>
+		<div class="row"><%node.members.all.each do |member|%>
+			<div class="col-2"><%=card(member)%></div>
+		<%end%></div>
+		<h2>Criadores</h2>
+		<div class="row"><%node.authors.all.each do |author|%>
+			<div class="col-2"><%=card(author)%></div>
+		<%end%></div>
+		<h2>Seguidores</h2>
+		<div class="row"><%node.followers.all.each do |unit|%>
+			<div class="col-2"><%=card(unit)%></div>
+		<%end%></div>
+	</div>
+
+</div>

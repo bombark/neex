@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<%=title "Contatos"%>
+<table class="table">
+	<thead><tr>
+		<th>Nome</th>
+		<th>Profissao</th>
+		<th>Facebook</th>
+		<th>Whatsapp</th>
+	</tr></thead>
+	<tbody><% @people.each do |person| %><tr>
+		<td><%=person.name%></td>
+		<td><%=person.work%></td>
+		<td><i class="fab fa-facebook-f"></i>aa vvva</td>
+	</tr><% end %></tbody>
+</table><br>
+
+
+<%=link_to "Novo","/home/contacts/new",class:"btn btn-primary"%>

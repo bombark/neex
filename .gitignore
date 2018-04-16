@@ -2,6 +2,7 @@ app/assets/bootstrap
 app/assets/fontawesome
 db/filesystem
 public/imagens
+Gemfile.lock
 
 *.rbc
 capybara-*.html

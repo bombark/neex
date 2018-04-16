@@ -1,0 +1,4 @@
+<p>
+	<strong>Title:</strong>
+	#{h @groups[0].name }
+</p>

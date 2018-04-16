@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%=title "Usuarios"%>
+
+<div class="row"><% nodepkg.each do |user| %>
+	<div class="col-4"><%=card(user)%></div>
+<%end%></div>
+
+<%if node.blank?%>
+	<%= link_to 'New User', new_user_path %>
+<%end%>

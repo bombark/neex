@@ -1,0 +1,68 @@
+
+<%meta title: "Neex - #{node.name}"%>
+<%metamagic image_src: "#{request.host}#{node.thumbnail}"%>
+<%metamagic name: node.name %>
+<%metamagic language: "pt-br" %>
+
+
+<div class="row"><div class="col-12">
+
+	<div class="row"><div class="col-12">
+		<div class="jumbotron p-3 p-md-5 text-white" style="background-image: url(https://fedoramagazine.org/wp-content/uploads/2016/10/f25-supplemental-wp-chosen-945x400.png); background-size: 100%;">
+			<div class="col-md-6 px-0">
+				<h1 class="display-4 font-italic"><%=node.name%></h1>
+				<p class="lead my-3">descricao</p>
+			</div>
+		</div>
+	</div></div>
+
+</div></div>
+
+<div class="row"><div class="col-3">
+
+	<center><%=image_md(node)%></center><hr>
+
+	<ul class="list-group">
+		<li class="list-group-item">
+			<a href="<%=node.path%>"><%=fa_icon "home"%> Home</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/news"><%=fa_icon "newspaper"%> Noticias</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/members"><%=fa_icon "users"%> Membros</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/groups">Grupos</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/projects"><%=fa_icon "tasks"%> Projetos</a>
+		</li>
+	</ul><hr>
+
+	<div align="center"><ul class="list-inline">
+		<li class="list-inline-item">
+			<a href="" target="blank"><h1><%=fa_icon "facebook-square"%></h1></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="" target="blank"><h1><%=fa_icon "twitter-square "%></h1></a>
+		</li>
+	</ul></div>
+
+	<%if @current_user.present?%>
+		<hr><ul class="list-group">
+			<li class="list-group-item">
+				<%=followed_button(node,@current_user)%>
+			</li>
+			<li class="list-group-item">
+				<%=button_enter(node,@current_user)%>
+			</li>
+		</ul>
+	<%end%>
+
+
+</div><div class="col-9">
+	<p id="notice"><%= notice %></p>
+
+	<%=main%>
+</div>

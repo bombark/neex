@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= node.name %></h1><hr>
+
+
+<%=link_to "vivo neste lugar","/edges/lives?id=#{node.id}"%><br>
+<%=link_to "já visitei este lugar","/edges/visits?id=#{node.id}"%><br>
+
+
+
+<%=title "Pessoas neste Lugar",0%>
+<%node.dwellers.all.each do |dweller|%>
+	<%=link_to dweller.name, dweller.path%>
+<%end%>
+
+
+<%=title "Grupos neste Lugar",0%>

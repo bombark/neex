@@ -1,0 +1,70 @@
+
+<%meta title: "Neex - #{node.name}"%>
+<%metamagic image_src: "#{request.host}#{node.thumbnail}"%>
+<%metamagic name: node.name %>
+<%metamagic language: "pt-br" %>
+
+
+<div class="row"><div class="col-12">
+
+	<div class="row"><div class="col-12">
+		<%=jumbotron(node)%>
+	</div></div>
+
+</div></div>
+
+<div class="row"><div class="col-3">
+
+	<center><%=image_md(node)%></center><hr>
+
+	<ul class="list-group">
+		<li class="list-group-item">
+			<a href="<%=node.path%>"><%=fa_icon "home"%> Home</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/news"><%=fa_icon "folder"%> Noticias</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/friends"><%=fa_icon "users"%> Amigos</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/groups"><%=fa_icon "folder"%> Grupos</a>
+		</li>
+		<li class="list-group-item">
+			<a href="<%=node.path%>/projects"><%=fa_icon "tasks"%> Projetos</a>
+		</li>
+	</ul><hr>
+
+	<div align="center"><ul class="list-inline">
+		<%if node.facebook.present?%>
+			<li class="list-inline-item">
+				<a href="<%=node.facebook%>" target="blank"><h1><%=fa_icon "facebook-square"%></h1></a>
+			</li>
+		<%end%>
+		<%if node.lk_github.present?%>
+			<li class="list-inline-item">
+				<a href="<%=node.github%>" target="blank"><h1><%=fa_icon "github-square"%></h1></a>
+			</li>
+		<%end%>
+		<%if node.lk_linkedin.present?%>
+			<li class="list-inline-item">
+				<a href="<%=node.linkedin%>" target="blank"><h1><%=fa_icon "linkedin"%></h1></a>
+			</li>
+		<%end%>
+		<%if node.lk_twitter.present?%>
+			<li class="list-inline-item">
+				<a href="<%=node.twitter%>" target="blank"><h1><%=fa_icon "twitter-square"%></h1></a>
+			</li>
+		<%end%>
+	</ul></div>
+
+	<%if user.present?%>
+		<%= link_to 'Adicionar como Amigo', "/edges/addfriend?id=#{node.id}" %><br>
+		<%= link_to 'Remover como Amigo', "/edges/delfriend?id=#{node.id}" %><br>
+	<%end%>
+
+</div><div class="col-9">
+	<p id="notice"><%= notice %></p>
+
+	<%=main%>
+</div>

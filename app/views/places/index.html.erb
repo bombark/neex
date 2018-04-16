@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<%=title "Locais",Place.count%>
+<table class="table">
+	<thead><tr>
+		<th>Nome</th>
+		<th>Visitantes</th>
+		<th>Moradores</th>
+	</tr></thead>
+	<tbody><% @places.each do |place| %><tr>
+		<td><%=link_to place.name, place.path %></td>
+		<td><%=place.visitors.count %></td>
+		<td><%=place.dwellers.count %></td>
+	</tr><% end %></tbody>
+</table><br>

@@ -1,0 +1,15 @@
+
+
+
+<%obj=@current_user%>
+
+
+<div class="col-6">
+	<%=image_md(obj)%>
+	<%=obj.name%>
+	<ul class="list-group">
+		<%obj.meta.each do |edge|%>
+			<li class="list-group-item"><a href="?p=<%=edge%>"><%=edge%></a></li>
+		<%end%>
+	</ul>
+</div>
